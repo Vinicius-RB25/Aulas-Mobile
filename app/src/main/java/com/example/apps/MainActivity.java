@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         textView=findViewById(R.id.tv);
         textView.setText(Integer.toString((contador)));
         textView.setOnClickListener(v -> {
-            textView.setText(contador++);
+            textView.setText(Integer.toString(contador++));
         });
 
     }
