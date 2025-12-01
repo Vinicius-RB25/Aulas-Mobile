@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.example.apps.R;
 
 import java.util.ArrayList;
 
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         CarregaListagem();
 
         b.setOnClickListener(v -> {
+
             String titulo = editText.getText().toString();
             ContentValues cv = new ContentValues();
             cv.put("titulo", titulo);
@@ -56,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
             CarregaListagem();
         });
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            String titulo = (String) parent.getItemAtPosition(position);
-            Intent intent = new Intent(MainActivity.this)
-
-        });
-
-
+                    String titulo = (String) parent.getItemAtPosition(position);
+                    Intent intent = new Intent(MainActivity.this, com.example.apps.ExibeItem.class);
+                    intent.putExtra("titulo",titulo);
+                    startActivity(intent);
+                }
+        );
 
 
 
@@ -70,8 +70,11 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = db.rawQuery("SELECT * FROM notas",null);
         cursor.moveToFirst();
         ArrayList<String> titulos = new ArrayList<String>();
+        ArrayList<String> textos = new ArrayList<String>();
         while(!cursor.isAfterLast() ) {
             String titulo = cursor.getString(cursor.getColumnIndex("titulo"));
+            String texto = cursor.getString(cursor.getColumnIndex("texto"));
+            textos.add(texto);
             titulos.add(titulo);
             cursor.moveToNext();
         }
