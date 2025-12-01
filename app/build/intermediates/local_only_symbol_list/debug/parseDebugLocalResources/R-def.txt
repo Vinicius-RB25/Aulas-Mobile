@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable abaixopeso
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable normal
+drawable obesidade1
+drawable obesidade2
+drawable obesidade3
+drawable perfil
+drawable sobrepeso
+id button
+id edAltura
+id edPeso
+id imageView
+id imageView2
+id main
+id titulo
+id tvAltura
+id tvPeso
+id tvResultado
+layout activity_imcresultado
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Aula2
+style Theme.Aula2
+xml backup_rules
+xml data_extraction_rules
