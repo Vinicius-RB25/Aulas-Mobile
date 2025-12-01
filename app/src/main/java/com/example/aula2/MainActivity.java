@@ -14,7 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class
+MainActivity extends AppCompatActivity {
     TextView  textView;
 
     int contador;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         editTextMin = findViewById(R.id.edMin);
         getEditTextMax = findViewById(R.id.edMax);
-        tv = findViewById(R.id.tv);
+        tv = findViewById(R.id.textView);
 
         button.setOnClickListener(v -> {
             Random random = new Random();
